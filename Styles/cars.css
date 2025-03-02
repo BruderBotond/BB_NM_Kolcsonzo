@@ -1,0 +1,394 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gradient {
+    background-image: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.header {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+}
+
+
+
+@media (min-width: 768px) {
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+
+
+/* Car Showcase */
+.car-showcase {
+    padding: 2rem 0;
+}
+
+.car-title-box {
+    background-color: #f3f4f6;
+    border: 1px solid #B90504;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.car-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.car-tagline {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.car-image-container {
+    margin-bottom: 2rem;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #B90504;
+    margin: 2rem 0;
+}
+
+/* Car Specs */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Alapértelmezett: 2 oszlop */
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center; /* Középre igazítás vízszintesen */
+}
+
+@media (min-width: 768px) {
+    .specs-grid {
+        grid-template-columns: repeat(6, 1fr); /* Nagyobb képernyőkön: 6 oszlop */
+    }
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Középre igazítás függőlegesen */
+    justify-content: center; /* Középre igazítás vízszintesen */
+    text-align: center; /* Szöveg középre igazítása */
+}
+
+.spec-icon {
+    margin-bottom: 0.5rem; /* Távolság az ikon és az érték között */
+    font-size: 1.5rem; /* Ikon mérete */
+}
+
+.spec-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem; /* Távolság az érték és a felirat között */
+}
+
+.spec-value.red {
+    font-size: 2.25rem;
+    color: #B90504;
+}
+
+.spec-value-small {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.spec-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #666; 
+}
+
+.speed-indicator {
+    position: relative;
+    margin-bottom: 0.25rem;
+}
+
+.speed-unit {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.speed-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.red-icon {
+    color: #B90504;
+}
+
+.learn-more-container {
+    text-align: center;
+    margin-bottom: 2rem; 
+    margin-top: -1rem; 
+}
+
+.learn-more-button {
+    background-image: linear-gradient(to bottom, #B90504, #7f1d1d);
+    color: #f6f6f6;
+    border: 10px solid #B90504;
+    font-weight: 900;
+    font-size: large;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-image 0.3s;
+}
+
+.learn-more-button:hover {
+    background-image: linear-gradient(to right, #991b1b, #713f3f);
+}
+
+/* V Shape */
+.v-shape {
+    position: relative;
+    height: 6rem;
+    margin-top: -2rem; /* Módosítva: kicsivel feljebb */
+}
+
+.v-shape::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent, #B90504);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Track Section */
+.track-section {
+    padding: 2rem 0;
+    background-color: #d1d5db;
+}
+
+.section-title-box {
+    background-color: #e5e7eb;
+    border: 1px solid #B90504;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.track-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .track-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+/* Track Options */
+.track-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.track-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #B90504;
+    background-color: #e5e7eb;
+    cursor: pointer;
+    text-align: left;
+}
+
+.track-option.selected {
+    background-color: #9ca3af;
+    border-color: #6b7280;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+}
+
+.track-icon {
+    margin-right: 0.75rem;
+}
+
+.track-name {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.track-selector {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid #B90504;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.track-selector-inner {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #4b5563;
+    display: none;
+}
+
+.track-option.selected .track-selector-inner {
+    display: block;
+}
+
+/* Laps Selection */
+.laps-container {
+    margin-top: 2rem;
+}
+
+.laps-title-box {
+    background-color: #e5e7eb;
+    border: 1px solid #B90504;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.laps-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.laps-selection-box {
+    background-color: #f3f4f6;
+    border: 1px solid #B90504;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.laps-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.lap-option {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #B90504;
+    background-color: #e5e7eb;
+    color: #1f2937;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lap-option:hover {
+    background-color: #d1d5db;
+}
+
+.lap-option.selected {
+    background-color: #B90504;
+    color: white;
+    border-color: #B90504;
+}
+
+.laps-summary {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.selected-laps {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.total-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.cart-button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.cart-button {
+    background-color: #B90504;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+    background-color: #991b1b;
+}
+
+.cart-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}

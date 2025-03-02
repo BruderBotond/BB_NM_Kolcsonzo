@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+}
+
+
+.card-container {
+    border: #B90504 3px solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 oszlop */
+    grid-template-rows: repeat(2, 1fr); /* 2 sor */
+    gap: 1.5rem; /* Kisebb térköz a kártyák között */
+    padding: 1.5rem; /* Kisebb padding */
+    width: 100%; /* Teljes szélesség kitöltése */
+    box-sizing: border-box; /* A padding ne növelje a szélességet */
+    background-color: #1a1a1a; /* Sötét háttér a konténerhez */
+  }
+  
+  .card {
+    border: 3px solid #B90504; /* Piros szegély */
+    border-radius: 15px; /* Nagyobb lekerekítés */
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    filter: grayscale(100%); /* Alapvetően színtelen */
+    width: 100%;
+    height: 200px; /* Rögzített magasság */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:red; /* Sötét szürke háttér */
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Kisebb nagyítás hover esetén */
+    filter: grayscale(0%); /* Színek megjelenítése hover esetén */
+    box-shadow: 0 10px 20px rgba(185, 5, 4, 1); /* Piros árnyék hover esetén */
+    border-color: #fff; /* Fehér szegély hover esetén */
+  }
+  
+  .card img {
+    max-width: 90%; /* Kép szélessége legfeljebb 90%-a a kártyának */
+    max-height: 90%; /* Kép magassága legfeljebb 90%-a a kártyának */
+    object-fit: contain; /* Kép arányos megjelenítése, nem nyúlik túl */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1); /* Kép nagyítása hover esetén */
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Új elem: Kártya cím */
+  .card::after {
+    
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff; /* Fehér szöveg */
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card:hover::after {
+    opacity: 1; /* Cím megjelenítése hover esetén */
+  }
+  
