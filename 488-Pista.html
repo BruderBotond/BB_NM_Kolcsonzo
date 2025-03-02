@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ferrari 488-Pista</title>
+    <link rel="stylesheet" href="../Styles/cars.css" />
+    <link rel="stylesheet" href="../Styles/navbar.css" />
+    <link rel="stylesheet" href="../Styles/footer.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="min-h-screen bg-gradient">
+      
+      <section class="car-showcase">
+        <div class="container">
+          <div class="car-title-box">
+            <h1 class="car-title">Ferrari 488-Pista</h1> 
+          </div>
+          
+          <h2 class="car-tagline">Track-Bred Precision – Relentless Power – Unforgettable Thrill</h2>
+          
+          <div class="car-image-container">
+            <img 
+              src="" 
+              alt="Ferrari 488 Pista" 
+              class="car-image" 
+            />
+          </div>
+          
+          <hr class="divider" />
+          
+          
+          <div class="specs-grid">
+            <div class="spec-item">
+              <h3 class="spec-value red">AWD</h3> 
+              <p class="spec-value"></p> 
+            </div>
+            
+            <div class="spec-item">
+              <div class="speed-indicator">
+                <img src="../src/Speedometer.png" alt="">
+                <h3 class="spec-value"></h3> 
+              </div>
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-icon">
+                <img src="../src/HorsePower.png" alt="">
+              </div>
+              <h3 class="spec-value"></h3> 
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-icon">
+                <img src="../src/Engine.png" alt="">
+              </div>
+              <h3 class="spec-value"></h3> 
+            </div>
+            
+            <div class="spec-item">
+              <img src="../src/0-100.png" alt="">
+              <h3 class="spec-value"></h3> 
+            </div>
+            
+            <div class="spec-item">
+              <div class="spec-icon">
+                <img src="../src/Gearbox.png" alt="">
+              </div>
+              <h3 class="spec-value"></h3> 
+              <p class="spec-label">Automatic</p>
+            </div>
+          </div>
+          
+          <div class="learn-more-container">
+            <a href="https://www.ferrari.com/en-EN/auto/sf90-stradale " target="_blank">
+                <button class="learn-more-button">
+                    Learn More
+                </button>
+            </a>
+          </div>
+        </div>
+        
+        
+        <div class="v-shape"></div>
+      </section>
+
+      
+      <section class="track-section">
+        <div class="container">
+          <div class="section-title-box">
+            <h2 class="section-title">Choose Track</h2>
+          </div>
+          
+          <div class="track-grid">
+            <div class="track-options">
+              <button class="track-option" data-track="hungaroring">
+                <div class="track-info">
+                 
+                  <span class="track-name">Hungaroring</span>
+                </div>
+                <div class="track-selector">
+                  <div class="track-selector-inner"></div>
+                </div>
+              </button>
+              
+              <button class="track-option" data-track="balaton">
+                <div class="track-info">
+                  
+                  <span class="track-name">Balaton Park Circuit</span>
+                </div>
+                <div class="track-selector">
+                  <div class="track-selector-inner"></div>
+                </div>
+              </button>
+              
+              <button class="track-option" data-track="mring">
+                <div class="track-info">
+                  
+                  <span class="track-name">M-Ring</span>
+                </div>
+                <div class="track-selector">
+                  <div class="track-selector-inner"></div>
+                </div>
+              </button>
+              
+              <button class="track-option" data-track="drx">
+                <div class="track-info">
+                 
+                  <span class="track-name">DRX Rally Arena</span>
+                </div>
+                <div class="track-selector">
+                  <div class="track-selector-inner"></div>
+                </div>
+              </button>
+              
+              <div class="laps-container">
+                <div class="laps-title-box">
+                  <h3 class="laps-title">Choose Number Of Laps</h3>
+                </div>
+                
+                <div class="laps-selection-box">
+                  <div class="laps-options">
+                    <button class="lap-option" data-laps="1">1 Lap</button>
+                    <button class="lap-option" data-laps="3">3 Laps</button>
+                    <button class="lap-option" data-laps="5">5 Laps</button>
+                    <button class="lap-option" data-laps="10">10 Laps</button>
+                  </div>
+                  
+                  <div class="laps-summary">
+                    <div class="selected-laps">Select laps</div>
+                    <div class="total-price">Total: 0$</div>
+                  </div>
+                </div>
+                
+                <div class="cart-button-container">
+                  <button class="cart-button" data-car-id="1" disabled>Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../cars.js"></script>
+    <script src="nav&footer.js"></script>
+    <script src="../fetch_one_car.js"></script> 
+  </body>
+</html>
