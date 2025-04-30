@@ -12,19 +12,16 @@ async function fetchCarData(carModel) {
             throw new Error(car.error);
         }
 
-        // Ellenőrizd, hogy az image_url létezik és nem üres
         if (!car.image_url) {
             throw new Error("image_url is missing or empty in the response");
         }
 
-        // Konzolba írd ki a választ hibakereséshez
         console.log("Server response:", car);
 
         document.querySelector('.car-title').textContent = `${car.model}`;
 
-        const imageUrls = car.image_url.split(', '); 
+        const imageUrls = car.image_url.split(','); 
 
-        // Ellenőrizd, hogy van-e második URL, ha nincs, használj alapértelmezett képet
         const secondImageUrl = imageUrls.length >= 2 ? imageUrls[1].replace(/"/g, '') : 'default-image.jpg';
 
         const carImage = document.querySelector('.car-image');

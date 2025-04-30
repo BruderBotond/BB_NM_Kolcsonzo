@@ -40,11 +40,11 @@ if (isset($_POST['login'])) {
                 $update_stmt->close();  
 
                 $stmt->close();  
-                header("Location: index.html");  
+                header("Location: index.php"); // index.html helyett index.php  
                 exit();  
             } else {  
                 // Hibás jelszó  
-                $_SESSION['error'] = "Hibás jelszó!";  
+                $_SESSION['error'] = "Invalid password!";  
                 $_SESSION['old_login_email'] = $email;  
                 $stmt->close();  
                 header("Location: register.php");  
@@ -52,15 +52,14 @@ if (isset($_POST['login'])) {
             }  
         } else {  
             // Nincs ilyen email címmel regisztrált felhasználó  
-            $_SESSION['error'] = "Nincs ilyen felhasználó!";  
+            $_SESSION['error'] = "This user doesn't exist!";  
             $_SESSION['old_login_email'] = $email;  
             $stmt->close();  
             header("Location: register.php");  
             exit();  
         }  
-
     } catch (Exception $e) {  
-        $_SESSION['error'] = "Hiba történt a bejelentkezés során!";  
+        $_SESSION['error'] = "An error occurred during login!";  
         header("Location: register.php");  
         exit();  
     }  

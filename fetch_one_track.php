@@ -19,8 +19,8 @@ if ($conn->connect_error) {
     die(json_encode(['error' => 'Connection failed: ' . $conn->connect_error]));
 }
 
-// Fetch track data (only image_url)
-$sql = "SELECT image_url FROM tracks WHERE name = ?";
+// Fetch track data (image_url AND gallery) - módosítva a gallery mező hozzáadásával
+$sql = "SELECT image_url, gallery FROM tracks WHERE name = ?";
 $stmt = $conn->prepare($sql);
 
 if (!$stmt) {
@@ -33,7 +33,26 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $track = $result->fetch_assoc();
-    echo json_encode(['image_url' => $track['image_url']]); // Return JSON response
+    
+    // Parse gallery string to array
+    $galleryUrls = [];
+    if (!empty($track['gallery'])) {
+        // Split the gallery string by commas and clean the URLs
+        $galleryString = $track['gallery'];
+        $galleryItems = explode('",', $galleryString);
+        
+        foreach ($galleryItems as $item) {
+            // Clean up the URL by removing extra quotes
+            $cleanUrl = str_replace('"', '', $item);
+            $galleryUrls[] = $cleanUrl;
+        }
+    }
+    
+    // Return both image_url and gallery
+    echo json_encode([
+        'image_url' => $track['image_url'],
+        'gallery' => $galleryUrls
+    ]);
 } else {
     echo json_encode(['error' => 'Track not found']);
 }

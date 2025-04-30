@@ -24,7 +24,7 @@ if (isset($_POST['signup'])) {
 
         // Ellenőrzések  
         if (empty($name) || empty($email) || empty($password)) {  
-            $_SESSION['error'] = "Minden mező kitöltése kötelező!";  
+            $_SESSION['error'] = "Make sure to fill all boxes!";  
             $_SESSION['show_signup'] = true;  
             header("Location: " . $_SERVER['HTTP_REFERER']);  
             exit();  
@@ -32,7 +32,7 @@ if (isset($_POST['signup'])) {
 
         // Jelszó hosszának ellenőrzése  
         if (strlen($password) < 8) {  
-            $_SESSION['error'] = "A jelszónak minimum 8 karakter hosszúnak kell lennie!";  
+            $_SESSION['error'] = "The password must be at least 8 characters long!";  
             $_SESSION['old_name'] = $name;  
             $_SESSION['old_email'] = $email;  
             $_SESSION['show_signup'] = true;  
@@ -41,7 +41,7 @@ if (isset($_POST['signup'])) {
         }  
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-            $_SESSION['error'] = "Érvénytelen email cím!";  
+            $_SESSION['error'] = "Invalid email address!";  
             $_SESSION['old_name'] = $name;  
             $_SESSION['old_email'] = $email;  
             $_SESSION['show_signup'] = true;  
@@ -50,7 +50,7 @@ if (isset($_POST['signup'])) {
         }  
 
         if ($password !== $confirm_password) {  
-            $_SESSION['error'] = "A jelszavak nem egyeznek!";  
+            $_SESSION['error'] = "The passwords don't match!";  
             $_SESSION['old_name'] = $name;  
             $_SESSION['old_email'] = $email;  
             $_SESSION['show_signup'] = true;  
@@ -66,7 +66,7 @@ if (isset($_POST['signup'])) {
         
         if ($check_result->num_rows > 0) {  
             $check_stmt->close();  
-            $_SESSION['error'] = "Ez az email cím már regisztrálva van!";  
+            $_SESSION['error'] = "This email address is already registered!";  
             $_SESSION['old_name'] = $name;  
             $_SESSION['old_email'] = $email;  
             $_SESSION['show_signup'] = true;  
@@ -88,7 +88,7 @@ if (isset($_POST['signup'])) {
             header("Location: " . $_SERVER['HTTP_REFERER']);  
             exit();  
         } else {  
-            $_SESSION['error'] = "Hiba történt a regisztráció során: " . $conn->error;  
+            $_SESSION['error'] = "An error occurred during registration: " . $conn->error;  
             $_SESSION['old_name'] = $name;  
             $_SESSION['old_email'] = $email;  
             $_SESSION['show_signup'] = true;  

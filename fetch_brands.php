@@ -1,11 +1,10 @@
 <?php
-header(header: "Access-Control-Allow-Origin: *"); // Allow requests from any domain
-header(header: "Content-Type: application/json; charset=UTF-8"); // Set response type to JSON
+header(header: "Access-Control-Allow-Origin: *"); 
+header(header: "Content-Type: application/json; charset=UTF-8"); 
 
-// Database connection
 $servername = "127.0.0.1";
-$username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
+$username = "root"; 
+$password = ""; 
 $dbname = "luxhorizon";
 
 // Create connection
